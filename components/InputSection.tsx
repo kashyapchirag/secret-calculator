@@ -1,0 +1,183 @@
+"use client";
+import { useState } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { secrets } from "@/data/secrets";
+
+type propType = {
+  selectedSecret: string;
+  setSelectedSecret: React.Dispatch<React.SetStateAction<string>>;
+  playerLuck: string;
+  setPlayerLuck: React.Dispatch<React.SetStateAction<string>>;
+  secretChance: string;
+  setSecretChance: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const InputSection = ({
+  selectedSecret,
+  setSelectedSecret,
+  playerLuck,
+  setPlayerLuck,
+  secretChance,
+  setSecretChance,
+}: propType) => {
+  return (
+    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-[74%] h-80 rounded-[1.2rem] flex flex-col gap-5">
+      <div className="top-row flex gap-5 w-full ">
+        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+            🍀
+          </div>
+          <div className="flex-1 h-full">
+            <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
+              PLAYER LUCK
+            </h3>
+            <input
+              value={playerLuck}
+              onChange={(e) => {
+                setPlayerLuck(e.target.value);
+              }}
+              type="number"
+              step={0.1}
+              className="w-full bg-transparent font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300"
+              placeholder="Enter"
+            />
+          </div>
+        </div>
+
+        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center ">
+            🍀
+          </div>
+          <div className="flex-1  h-full">
+            <h3 className="flex items-center gap-1 text-[#12ddf4] font-semibold  font-mono text-[10px] uppercase tracking-[0.2em]">
+              SECRET CHANCE %
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    type="button"
+                    className="flex h-4 w-4 items-center justify-center rounded-full bg-white/10 text-[9px] font-semibold text-white transition hover:bg-white/20"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={28}
+                      height={28}
+                      color={"currentColor"}
+                      fill={"none"}
+                      className="text-[#ffb634] hover:text-[#fba91b] transition:all"
+                    >
+                      <path
+                        d="M9.5 9.5C9.5 8.11929 10.6193 7 12 7C13.3807 7 14.5 8.11929 14.5 9.5C14.5 10.3569 14.0689 11.1131 13.4117 11.5636C12.7283 12.0319 12 12.6716 12 13.5"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></path>
+                      <path
+                        d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></path>
+                    </svg>
+                  </button>
+                </TooltipTrigger>
+
+                <TooltipContent className="bg-[#050911] border border-[#222b39] flex flex-col justify-center items-start p-2">
+                  <div className="w-full flex justify-between items-center gap-3">
+                    <span className="text-[#8b8ba7] font-bold">
+                      No Secret Hunter GP
+                    </span>
+                    <span className="text-[#fabf22] [text-shadow:0_0_20px_currentColor] font-extrabold">
+                      0%
+                    </span>
+                  </div>
+                  <div className="w-full flex justify-between gap-3">
+                    <span className="text-[#8b8ba7] font-bold">
+                      With Secret Hunter GP
+                    </span>
+                    <span className="text-[#fabf22] [text-shadow:0_0_20px_currentColor] font-extrabold">
+                      50%
+                    </span>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </h3>
+            <input
+              value={secretChance}
+              onChange={(e) => {
+                setSecretChance(e.target.value);
+              }}
+              type="number"
+              //   defaultValue={0}
+              step={1}
+              className="w-full bg-transparent font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300"
+              placeholder="Enter"
+            />
+          </div>
+        </div>
+
+        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+            ⭐
+          </div>
+
+          <div className="flex-1 h-full flex flex-col justify-center">
+            <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
+              STAR (AUTO: {selectedSecret})
+            </h3>
+
+            <p className="mt-1 text-[1rem] leading-none font-semibold font-mono text-[#ffb634] [text-shadow:0_0_10px_rgba(255,182,52,0.2)]">
+              {secrets[selectedSecret.toLowerCase()].star} (
+              {secrets[selectedSecret.toLowerCase()].starLuck})
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bottom-row">
+        <h2 className="text-[#12ddf4] mb-3 font-mono text-[13px] uppercase tracking-[0.2em]">
+          TARGET UNIT
+        </h2>
+
+        <div className="box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
+          {Object.values(secrets).map((secret, idx) => {
+            return (
+              <button
+                key={idx}
+                onClick={() => setSelectedSecret(secret.name)}
+                className={`group relative flex h-18 flex-col justify-center overflow-hidden rounded-[1rem] px-3 text-left transition-all duration-300 ${
+                  selectedSecret === secret.name
+                    ? "border border-[#7C3AED] bg-[#151022] shadow-[inset_0_0_16px_rgba(124,58,237,0.12)] before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_50%_120%,rgba(124,58,237,0.12),transparent_70%)] before:content-['']"
+                    : "border border-[#212632] bg-[#050911] hover:-translate-y-0.5 hover:border-[#12ddf4]/70 hover:bg-[#0a101b]"
+                }`}
+              >
+                <h3
+                  className={`relative z-10 text-[1.05rem] font-semibold transition-all duration-300 ${
+                    selectedSecret === secret.name
+                      ? "text-[#C4B5FD] [text-shadow:0_0_8px_currentColor]"
+                      : "text-white group-hover:text-[#12ddf4] group-hover:[text-shadow:0_0_3px_currentColor]"
+                  }`}
+                >
+                  {secret.name}
+                </h3>
+                <p
+                  className={`relative z-10 mt-1 text-[0.62rem] transition-colors ${
+                    selectedSecret === secret.name
+                      ? "text-[#B7A7E8]"
+                      : "text-[#8b8ba7]"
+                  }`}
+                >
+                  Base: 1 in {secret.baseOdds.toLocaleString()} • {secret.star}
+                </p>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InputSection;
