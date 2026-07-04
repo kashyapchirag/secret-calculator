@@ -15,9 +15,6 @@ export default function Home() {
     playerLuck: number,
     secretChance: number,
   ) => {
-    // If Total Luck ≥ 14 → 100 / (Base × 1.03797036 × (1 + Secret Chance%) × (1.7 + Total Luck × 0.05))
-    // Odds (1 in X) =
-    // 100 / (Unit Base Chance × 1.037970360 × (1 + Secret Chance%) × (1 + (Player Luck + Star Luck) × 0.1))
     let result;
     let totalLuck = playerLuck + secrets[selectedSecret.toLowerCase()].starLuck;
 
@@ -61,7 +58,7 @@ export default function Home() {
         playerLuck={playerLuck}
         result={result}
       />
-      <CurveSection />
+      <CurveSection result={result} />
     </div>
   );
 }

@@ -84,7 +84,7 @@ const InputSection = ({
                   </button>
                 </TooltipTrigger>
 
-                <TooltipContent className="bg-[#050911] border border-[#222b39] flex flex-col justify-center items-start p-2">
+                <TooltipContent className="bg-[#050911] border border-[#222b39] font-mono flex flex-col justify-center items-start p-2">
                   <div className="w-full flex justify-between items-center gap-3">
                     <span className="text-[#8b8ba7] font-bold">
                       No Secret Hunter GP

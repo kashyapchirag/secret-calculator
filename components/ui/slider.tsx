@@ -33,7 +33,7 @@ function Slider({
       value={value}
       defaultValue={defaultValue}
       className={cn(
-        "relative flex w-full touch-none select-none items-center ",
+        "relative flex w-full touch-none select-none items-center",
         className,
       )}
       {...props}
@@ -42,15 +42,12 @@ function Slider({
       <SliderPrimitive.Track
         className="
           relative
-          h-[14px]
+          h-0.75
           w-full
           grow
           overflow-hidden
           rounded-full
-          border
-          border-[#202c3e]
-          bg-[#101826]
-          
+          bg-[#1c2534]
         "
       >
         {/* Filled Range */}
@@ -60,8 +57,7 @@ function Slider({
             h-full
             rounded-full
             bg-[#20dfff]
-            shadow-[0_0_14px_rgba(32,223,255,0.8)]
-            
+            shadow-[0_0_8px_rgba(32,223,255,0.7)]
           "
         />
       </SliderPrimitive.Track>
@@ -71,34 +67,26 @@ function Slider({
         <SliderPrimitive.Thumb
           key={index}
           className="
-            relative
             block
-            h-9
-            w-9
+            h-4
+            w-4
             rounded-full
 
-            border-[3px]
+            border-2
             border-[#20dfff]
 
             bg-[#0c121d]
 
-            shadow-[0_0_18px_rgba(32,223,255,.85)]
+            shadow-[0_0_10px_rgba(32,223,255,0.9)]
 
-            transition-all
-            duration-200
+            transition-transform
+            duration-150
 
-            hover:scale-105
-            hover:shadow-[0_0_24px_rgba(32,223,255,1)]
+            hover:scale-110
 
             focus-visible:outline-none
             focus-visible:ring-4
             focus-visible:ring-cyan-400/20
-
-            before:absolute
-            before:inset-[5px]
-            before:rounded-full
-            before:bg-[#162131]
-            
           "
         />
       ))}
