@@ -16,7 +16,8 @@ export default function Home() {
     secretChance: number,
   ) => {
     let result;
-    let totalLuck = playerLuck + secrets[selectedSecret.toLowerCase()].starLuck;
+    const totalLuck =
+      playerLuck + secrets[selectedSecret.toLowerCase()].starLuck;
 
     if (totalLuck < 14) {
       result =
@@ -25,7 +26,7 @@ export default function Home() {
           1.03797036 *
           (1 + secretChance / 100) *
           (1 + totalLuck * 0.1));
-    } else if (totalLuck >= 14) {
+    } else {
       result =
         100 /
         (secrets[selectedSecret.toLowerCase()].baseChance *
@@ -43,22 +44,23 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-[#0a0e19] min-h-screen min-w-screen flex flex-col gap-5 py-7 items-center">
-      <InputSection
-        selectedSecret={selectedSecret}
-        setSelectedSecret={setSelectedSecret}
-        playerLuck={playerLuck}
-        setPlayerLuck={setPlayerLuck}
-        secretChance={secretChance}
-        setSecretChance={setSecretChance}
-        result={result}
-      />
-      <OddsResult
-        selectedSecret={selectedSecret}
-        playerLuck={playerLuck}
-        result={result}
-      />
-      <CurveSection result={result} />
+    <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 py-7 px-4 sm:px-6 items-center">
+      <div className="w-full max-w-5xl flex flex-col gap-5">
+        <InputSection
+          selectedSecret={selectedSecret}
+          setSelectedSecret={setSelectedSecret}
+          playerLuck={playerLuck}
+          setPlayerLuck={setPlayerLuck}
+          secretChance={secretChance}
+          setSecretChance={setSecretChance}
+        />
+        <OddsResult
+          selectedSecret={selectedSecret}
+          playerLuck={playerLuck}
+          result={result}
+        />
+        <CurveSection result={result} targetName={selectedSecret} />
+      </div>
     </div>
   );
 }

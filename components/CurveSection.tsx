@@ -78,8 +78,8 @@ const CurveSection = ({
   const milestones = [0.25, 0.5, 0.75, 0.99] as const;
 
   return (
-    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-[74%] min-h-80 rounded-[1.2rem] flex flex-col gap-0">
-      <h1 className="w-full flex justify-between">
+    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-full min-h-80 rounded-[1.2rem] flex flex-col gap-0">
+      <h1 className="w-full flex flex-col sm:flex-row sm:justify-between gap-1">
         <span className="text-[#12ddf4] mb-3 font-mono text-[13px] uppercase tracking-[0.2em]">
           Normal Pull
         </span>
@@ -90,7 +90,7 @@ const CurveSection = ({
       </h1>
 
       {/* slider block */}
-      <div className="mt-2 flex items-baseline justify-between w-full">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between w-full gap-1">
         <span className="text-[#8b8ba7] font-mono text-[14px] flex gap-2 items-center">
           Opens made so far
           <span>
@@ -156,12 +156,12 @@ const CurveSection = ({
       {/* big percentage readout */}
       <div className="mt-4 flex flex-col items-center">
         <div
-          className="font-mono text-7xl font-bold tracking-tight text-[#12ddf4]"
+          className="font-mono text-5xl sm:text-7xl font-bold tracking-tight text-[#12ddf4]"
           style={{ textShadow: "0 0 32px rgba(18,221,244,0.4)" }}
         >
           {(currentProb * 100).toFixed(1)}%
         </div>
-        <div className="mt-1 text-sm text-[#8b8ba7]">
+        <div className="mt-1 text-sm text-[#8b8ba7] text-center">
           chance of pulling in {opensMade.toLocaleString("en-US")} opens
         </div>
       </div>
@@ -179,16 +179,16 @@ const CurveSection = ({
                 setOpensMade(Math.min(maxOpens, Math.max(0, Math.round(need))))
               }
               className={
-                "rounded-xl border bg-[#050911] px-4 py-3 text-center transition-all " +
+                "rounded-xl border bg-[#050911] px-2 py-3 sm:px-4 text-center transition-all " +
                 (active
                   ? "border-[#12ddf4] shadow-[0_0_0_1px_#12ddf4]"
                   : "border-[#212632] hover:border-[#12ddf4]/60")
               }
             >
-              <div className="font-mono text-lg font-bold text-[#12ddf4]">
+              <div className="font-mono text-base sm:text-lg font-bold text-[#12ddf4]">
                 {(pct * 100).toFixed(0)}%
               </div>
-              <div className="mt-0.5 font-mono text-xs text-[#8b8ba7]">
+              <div className="mt-0.5 font-mono text-[10px] sm:text-xs text-[#8b8ba7]">
                 {formatCompact(need)} opens
               </div>
             </button>

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { secrets } from "@/data/secrets";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -22,13 +21,14 @@ const InputSection = ({
   setSecretChance,
 }: propType) => {
   return (
-    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-[74%] h-80 rounded-[1.2rem] flex flex-col gap-5">
-      <div className="top-row flex gap-5 w-full ">
-        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-full min-h-fit rounded-[1.2rem] flex flex-col gap-5">
+      <div className="top-row flex flex-col sm:flex-row gap-5 w-full">
+        {/* Player Luck */}
+        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             🍀
           </div>
-          <div className="flex-1 h-full overflow-hidden">
+          <div className="flex-1 h-full overflow-hidden min-w-0">
             <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
               PLAYER LUCK
             </h3>
@@ -37,10 +37,10 @@ const InputSection = ({
                 value={playerLuck}
                 onChange={(e) => setPlayerLuck(e.target.value)}
                 type="number"
-                className="w-3/4 font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
+                className="w-3/4 min-w-0 font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
                 placeholder="Enter"
               />
-              <div className="flex flex-col leading-none">
+              <div className="flex flex-col leading-none shrink-0">
                 <button
                   onClick={() =>
                     setPlayerLuck((v) =>
@@ -68,12 +68,13 @@ const InputSection = ({
           </div>
         </div>
 
-        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center ">
+        {/* Secret Chance % */}
+        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             🍀
           </div>
-          <div className="flex-1  h-full">
-            <h3 className="flex items-center gap-1 text-[#12ddf4] font-semibold  font-mono text-[10px] uppercase tracking-[0.2em]">
+          <div className="flex-1 h-full min-w-0">
+            <h3 className="flex items-center gap-1 text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
               SECRET CHANCE %
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -131,16 +132,12 @@ const InputSection = ({
             <div className="flex items-center justify-between mt-0.5">
               <input
                 value={secretChance}
-                onChange={(e) => {
-                  setSecretChance(e.target.value);
-                }}
+                onChange={(e) => setSecretChance(e.target.value)}
                 type="number"
-                //   defaultValue={0}
-                //   step={1}
-                className="w-3/4 font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
+                className="w-3/4 min-w-0 bg-transparent font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
                 placeholder="Enter"
               />
-              <div className="flex flex-col leading-none">
+              <div className="flex flex-col leading-none shrink-0">
                 <button
                   onClick={() =>
                     setSecretChance((v) =>
@@ -168,17 +165,16 @@ const InputSection = ({
           </div>
         </div>
 
-        <div className="bg-[#050911] w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+        {/* Star (auto) */}
+        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             ⭐
           </div>
-
-          <div className="flex-1 h-full flex flex-col justify-center">
-            <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
+          <div className="flex-1 h-full flex flex-col justify-center min-w-0">
+            <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em] truncate">
               STAR (AUTO: {selectedSecret})
             </h3>
-
-            <p className="mt-1 text-[1rem] leading-none font-semibold font-mono text-[#ffb634] [text-shadow:0_0_10px_rgba(255,182,52,0.2)]">
+            <p className="mt-1 text-[1rem] leading-none font-semibold font-mono text-[#ffb634] [text-shadow:0_0_10px_rgba(255,182,52,0.2)] truncate">
               {secrets[selectedSecret.toLowerCase()].star} (
               {secrets[selectedSecret.toLowerCase()].starLuck})
             </p>
@@ -191,7 +187,7 @@ const InputSection = ({
           TARGET UNIT
         </h2>
 
-        <div className="box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
+        <div className="box grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
           {Object.values(secrets).map((secret, idx) => {
             return (
               <button
