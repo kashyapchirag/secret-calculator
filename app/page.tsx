@@ -5,8 +5,9 @@ import OddsResult from "@/components/OddsResult";
 import { secrets } from "@/data/secrets";
 import { useState } from "react";
 
+type SecretKey = keyof typeof secrets;
 export default function Home() {
-  const [selectedSecret, setSelectedSecret] = useState<string>("Broly");
+  const [selectedSecret, setSelectedSecret] = useState<SecretKey>("broly");
   const [playerLuck, setPlayerLuck] = useState<string>("3.1");
   const [secretChance, setSecretChance] = useState<string>("0");
 
