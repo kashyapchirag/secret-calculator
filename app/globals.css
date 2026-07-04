@@ -2,6 +2,31 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+.shimmer-text {
+  background: linear-gradient(90deg,
+      #6c6b6e 0%,
+      #6c6b6e 35%,
+      #ffffff 50%,
+      #6c6b6e 65%,
+      #6c6b6e 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -121,9 +146,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

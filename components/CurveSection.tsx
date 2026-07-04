@@ -156,7 +156,7 @@ const CurveSection = ({
       {/* big percentage readout */}
       <div className="mt-4 flex flex-col items-center">
         <div
-          className="font-mono text-5xl sm:text-7xl font-bold tracking-tight text-[#12ddf4]"
+          className="font-mono text-5xl sm:text-7xl font-bold tracking-tight text-[#12ddf4] "
           style={{ textShadow: "0 0 32px rgba(18,221,244,0.4)" }}
         >
           {(currentProb * 100).toFixed(1)}%

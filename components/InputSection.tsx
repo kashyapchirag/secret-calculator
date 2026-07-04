@@ -25,7 +25,7 @@ const InputSection = ({
       <div className="top-row flex flex-col sm:flex-row gap-5 w-full">
         {/* Player Luck */}
         <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+          <div className="box h-full text-2xl w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             🍀
           </div>
           <div className="flex-1 h-full overflow-hidden min-w-0">
@@ -70,8 +70,8 @@ const InputSection = ({
 
         {/* Secret Chance % */}
         <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
-            🍀
+          <div className="box text-xl h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+            <span className="shimmer-text">???</span>
           </div>
           <div className="flex-1 h-full min-w-0">
             <h3 className="flex items-center gap-1 text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
@@ -167,8 +167,8 @@ const InputSection = ({
 
         {/* Star (auto) */}
         <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
-          <div className="box h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
-            ⭐
+          <div className="box text-5xl pb-2 text-white h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
+            ✦
           </div>
           <div className="flex-1 h-full flex flex-col justify-center min-w-0">
             <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em] truncate">
