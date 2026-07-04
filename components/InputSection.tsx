@@ -190,19 +190,20 @@ const InputSection = ({
 
         <div className="box grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
           {Object.entries(secrets).map(([key, secret]) => {
+            const secretKey = key as SecretKey;
             return (
               <button
-                key={key}
-                onClick={() => setSelectedSecret(key)}
+                key={secretKey}
+                onClick={() => setSelectedSecret(secretKey)}
                 className={`group relative flex h-18 flex-col justify-center overflow-hidden rounded-[1rem] px-3 text-left transition-all duration-300 ${
-                  selectedSecret === key
+                  selectedSecret === secretKey
                     ? "border border-[#7C3AED] bg-[#151022] shadow-[inset_0_0_16px_rgba(124,58,237,0.12)] before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_50%_120%,rgba(124,58,237,0.12),transparent_70%)] before:content-['']"
                     : "border border-[#212632] bg-[#050911] hover:-translate-y-0.5 hover:border-[#12ddf4]/70 hover:bg-[#0a101b]"
                 }`}
               >
                 <h3
                   className={`relative z-10 text-[1.05rem] font-semibold transition-all duration-300 ${
-                    selectedSecret === key
+                    selectedSecret === secretKey
                       ? "text-[#C4B5FD] [text-shadow:0_0_8px_currentColor]"
                       : "text-white group-hover:text-[#12ddf4] group-hover:[text-shadow:0_0_3px_currentColor]"
                   }`}
@@ -211,7 +212,7 @@ const InputSection = ({
                 </h3>
                 <p
                   className={`relative z-10 mt-1 text-[0.62rem] transition-colors ${
-                    selectedSecret === secret.name
+                    selectedSecret === secretKey
                       ? "text-[#B7A7E8]"
                       : "text-[#8b8ba7]"
                   }`}

@@ -21,14 +21,14 @@ export default function Home() {
     if (totalLuck < 14) {
       result =
         100 /
-        (secrets[selectedSecret.toLowerCase()].baseChance *
+        (secrets[selectedSecret].baseChance *
           1.03797036 *
           (1 + secretChance / 100) *
           (1 + totalLuck * 0.1));
     } else {
       result =
         100 /
-        (secrets[selectedSecret.toLowerCase()].baseChance *
+        (secrets[selectedSecret].baseChance *
           1.03797036 *
           (1 + secretChance / 100) *
           (1.7 + totalLuck * 0.05));
