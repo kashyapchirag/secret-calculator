@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { secrets } from "@/data/secrets";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type propType = {
   selectedSecret: string;
@@ -27,20 +28,43 @@ const InputSection = ({
           <div className="box h-full w-11 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             🍀
           </div>
-          <div className="flex-1 h-full">
+          <div className="flex-1 h-full overflow-hidden">
             <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
               PLAYER LUCK
             </h3>
-            <input
-              value={playerLuck}
-              onChange={(e) => {
-                setPlayerLuck(e.target.value);
-              }}
-              type="number"
-              step={0.1}
-              className="w-full bg-transparent font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300"
-              placeholder="Enter"
-            />
+            <div className="flex items-center justify-between mt-0.5">
+              <input
+                value={playerLuck}
+                onChange={(e) => setPlayerLuck(e.target.value)}
+                type="number"
+                className="w-3/4 font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
+                placeholder="Enter"
+              />
+              <div className="flex flex-col leading-none">
+                <button
+                  onClick={() =>
+                    setPlayerLuck((v) =>
+                      String(((Number(v) || 0) + 0.1).toFixed(1)),
+                    )
+                  }
+                  type="button"
+                  className="text-[#8b8ba7] hover:text-[#12ddf4] transition-colors"
+                >
+                  <ChevronUp size={16} />
+                </button>
+                <button
+                  onClick={() =>
+                    setPlayerLuck((v) =>
+                      String(((Number(v) || 0) - 0.1).toFixed(1)),
+                    )
+                  }
+                  type="button"
+                  className="text-[#8b8ba7] hover:text-[#12ddf4] transition-colors -mt-1"
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -104,17 +128,43 @@ const InputSection = ({
                 </TooltipContent>
               </Tooltip>
             </h3>
-            <input
-              value={secretChance}
-              onChange={(e) => {
-                setSecretChance(e.target.value);
-              }}
-              type="number"
-              //   defaultValue={0}
-              step={1}
-              className="w-full bg-transparent font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300"
-              placeholder="Enter"
-            />
+            <div className="flex items-center justify-between mt-0.5">
+              <input
+                value={secretChance}
+                onChange={(e) => {
+                  setSecretChance(e.target.value);
+                }}
+                type="number"
+                //   defaultValue={0}
+                //   step={1}
+                className="w-3/4 font-mono text-xl font-semibold outline-none text-white placeholder:text-neutral-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
+                placeholder="Enter"
+              />
+              <div className="flex flex-col leading-none">
+                <button
+                  onClick={() =>
+                    setSecretChance((v) =>
+                      String(((Number(v) || 0) + 1).toFixed(0)),
+                    )
+                  }
+                  type="button"
+                  className="text-[#8b8ba7] hover:text-[#12ddf4] transition-colors"
+                >
+                  <ChevronUp size={16} />
+                </button>
+                <button
+                  onClick={() =>
+                    setSecretChance((v) =>
+                      String(((Number(v) || 0) - 1).toFixed(0)),
+                    )
+                  }
+                  type="button"
+                  className="text-[#8b8ba7] hover:text-[#12ddf4] transition-colors -mt-1"
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
