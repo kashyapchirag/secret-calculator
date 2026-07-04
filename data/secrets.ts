@@ -49,3 +49,5 @@ export const secrets = {
     baseOdds: 1650000,
   },
 } as const;
+
+export type SecretKey = keyof typeof secrets;

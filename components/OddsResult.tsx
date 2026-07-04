@@ -1,8 +1,8 @@
-import { secrets } from "@/data/secrets";
+import { SecretKey, secrets } from "@/data/secrets";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type OddsResultProps = {
-  selectedSecret: string;
+  selectedSecret: SecretKey;
   playerLuck: string;
   result: number;
 };
@@ -12,8 +12,7 @@ const OddsResult = ({
   playerLuck,
   result,
 }: OddsResultProps) => {
-  const totalLuck =
-    Number(playerLuck) + secrets[selectedSecret.toLowerCase()].starLuck;
+  const totalLuck = Number(playerLuck) + secrets[selectedSecret].starLuck;
 
   return (
     <div className="bg-[#131924] border border-[#222b39] font-mono w-full min-h-fit rounded-[1.2rem] flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-10 p-5.5">
@@ -41,10 +40,10 @@ const OddsResult = ({
               ✦
             </span>
             <span className="mb-3 text-[#12ddf4] text-xs font-semibold">
-              {secrets[selectedSecret.toLowerCase()].starLuck >= 0 ? (
-                <>+{secrets[selectedSecret.toLowerCase()].starLuck}</>
+              {secrets[selectedSecret].starLuck >= 0 ? (
+                <>+{secrets[selectedSecret].starLuck}</>
               ) : (
-                <>{secrets[selectedSecret.toLowerCase()].starLuck}</>
+                <>{secrets[selectedSecret].starLuck}</>
               )}
             </span>
           </div>

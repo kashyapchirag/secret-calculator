@@ -2,23 +2,21 @@
 import CurveSection from "@/components/CurveSection";
 import InputSection from "@/components/InputSection";
 import OddsResult from "@/components/OddsResult";
-import { secrets } from "@/data/secrets";
+import { SecretKey, secrets } from "@/data/secrets";
 import { useState } from "react";
 
-type SecretKey = keyof typeof secrets;
 export default function Home() {
   const [selectedSecret, setSelectedSecret] = useState<SecretKey>("broly");
   const [playerLuck, setPlayerLuck] = useState<string>("3.1");
   const [secretChance, setSecretChance] = useState<string>("0");
 
   const calculateOdds = (
-    selectedSecret: string,
+    selectedSecret: SecretKey,
     playerLuck: number,
     secretChance: number,
   ) => {
     let result;
-    const totalLuck =
-      playerLuck + secrets[selectedSecret.toLowerCase()].starLuck;
+    const totalLuck = playerLuck + secrets[selectedSecret].starLuck;
 
     if (totalLuck < 14) {
       result =

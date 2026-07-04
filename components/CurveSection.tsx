@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Slider } from "./ui/slider";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { SecretKey, secrets } from "@/data/secrets";
 
 function cumulativeProb(chanceFraction: number, opens: number) {
   return 1 - Math.pow(1 - chanceFraction, opens);
@@ -19,10 +20,10 @@ function formatCompact(n: number) {
 
 const CurveSection = ({
   result,
-  targetName = "Vegito",
+  targetName = "broly",
 }: {
   result: number;
-  targetName?: string;
+  targetName?: SecretKey;
 }) => {
   const chanceFraction = 1 / result;
 
@@ -85,7 +86,9 @@ const CurveSection = ({
         </span>
         <span className="text-[#8b8ba7] text-xs">
           Target:{" "}
-          <span className="text-[#fabf22] font-medium">{targetName}</span>
+          <span className="text-[#fabf22] font-medium">
+            {secrets[targetName].name}
+          </span>
         </span>
       </h1>
 

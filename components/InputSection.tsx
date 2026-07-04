@@ -1,11 +1,11 @@
 "use client";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { secrets } from "@/data/secrets";
+import { SecretKey, secrets } from "@/data/secrets";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 type propType = {
-  selectedSecret: string;
-  setSelectedSecret: React.Dispatch<React.SetStateAction<string>>;
+  selectedSecret: SecretKey;
+  setSelectedSecret: React.Dispatch<React.SetStateAction<SecretKey>>;
   playerLuck: string;
   setPlayerLuck: React.Dispatch<React.SetStateAction<string>>;
   secretChance: string;
@@ -176,8 +176,8 @@ const InputSection = ({
               <span className="shimmer-text font-bold"> {selectedSecret})</span>
             </h3>
             <p className="mt-1 text-[1rem] leading-none font-semibold font-mono text-[#ffb634] [text-shadow:0_0_10px_rgba(255,182,52,0.2)] truncate">
-              {secrets[selectedSecret.toLowerCase()].star} (
-              {secrets[selectedSecret.toLowerCase()].starLuck})
+              {secrets[selectedSecret].star} ({secrets[selectedSecret].starLuck}
+              )
             </p>
           </div>
         </div>
@@ -189,20 +189,20 @@ const InputSection = ({
         </h2>
 
         <div className="box grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
-          {Object.values(secrets).map((secret, idx) => {
+          {Object.entries(secrets).map(([key, secret]) => {
             return (
               <button
-                key={idx}
-                onClick={() => setSelectedSecret(secret.name)}
+                key={key}
+                onClick={() => setSelectedSecret(key)}
                 className={`group relative flex h-18 flex-col justify-center overflow-hidden rounded-[1rem] px-3 text-left transition-all duration-300 ${
-                  selectedSecret === secret.name
+                  selectedSecret === key
                     ? "border border-[#7C3AED] bg-[#151022] shadow-[inset_0_0_16px_rgba(124,58,237,0.12)] before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_50%_120%,rgba(124,58,237,0.12),transparent_70%)] before:content-['']"
                     : "border border-[#212632] bg-[#050911] hover:-translate-y-0.5 hover:border-[#12ddf4]/70 hover:bg-[#0a101b]"
                 }`}
               >
                 <h3
                   className={`relative z-10 text-[1.05rem] font-semibold transition-all duration-300 ${
-                    selectedSecret === secret.name
+                    selectedSecret === key
                       ? "text-[#C4B5FD] [text-shadow:0_0_8px_currentColor]"
                       : "text-white group-hover:text-[#12ddf4] group-hover:[text-shadow:0_0_3px_currentColor]"
                   }`}
