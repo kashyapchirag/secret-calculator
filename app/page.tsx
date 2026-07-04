@@ -59,6 +59,19 @@ export default function Home() {
           result={result}
         />
         <CurveSection result={result} targetName={selectedSecret} />
+        <span className="text-center font-mono text-xs text-[#8b8ba7]">
+          Built with <span className="text-red-400">❤️</span> by{" "}
+          <span className="text-[#12ddf4] font-semibold">Isaaagi109</span> (
+          <a
+            href="https://github.com/kashyapchirag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#ffb634] hover:text-[#ffd36a] transition-colors"
+          >
+            @kashyapchirag
+          </a>
+          )
+        </span>
       </div>
     </div>
   );
