@@ -54,7 +54,7 @@ const OddsResult = ({
           <span className="text-[#8b8ba7] text-[11px] font-semibold uppercase tracking-[0.25em]">
             Your Odds
           </span>
-          <h2 className="text-[#12ddf4] text-4xl sm:text-6xl font-bold tracking-tight [text-shadow:0_0_24px_rgba(18,221,244,0.35)]">
+          <h2 className="text-[#12ddf4] text-4xl sm:text-6xl md:text-[3.5rem] font-bold tracking-tight [text-shadow:0_0_24px_rgba(18,221,244,0.35)]">
             1 IN {Number(result.toFixed(0)).toLocaleString()}
           </h2>
           <p className="text-[#8b8ba7] text-sm">
