@@ -101,11 +101,12 @@ const OddsResult = ({
                   </button>
                 </TooltipTrigger>
 
-                <TooltipContent className="bg-[#050911] border border-[#222b39] font-mono flex flex-col justify-center items-start p-2">
+                <TooltipContent className="bg-[#050911] border border-[#222b39] font-mono gap-0.5 flex flex-col justify-center items-center p-2">
                   <div className="w-full flex justify-between items-center gap-3 text-[10px]">
                     Player Luck<span className="text-[#fabf22] text-sm">+</span>
                     Star Luck
                   </div>
+                  <div className="text-xs text-neutral-400">≈ {totalLuck}</div>
                 </TooltipContent>
               </Tooltip>
             </span>
