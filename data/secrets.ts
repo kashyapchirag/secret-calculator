@@ -48,13 +48,6 @@ export const secrets = {
     baseChance: 0.00006060606,
     baseOdds: 1650000,
   },
-  cars: {
-    name: "Cars",
-    star: "Cairo",
-    starLuck: -0.35, // Unofficial estimate
-    baseChance: 0.00003571429,
-    baseOdds: 2800000,
-  },
 } as const;
 
 export type SecretKey = keyof typeof secrets;
