@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 py-7 px-4 sm:px-6 items-center">
-      <div className="w-full max-w-4xl flex flex-col gap-5">
+      <div className="w-full max-w-[62rem] flex flex-col gap-5">
         <InputSection
           selectedSecret={selectedSecret}
           setSelectedSecret={setSelectedSecret}
