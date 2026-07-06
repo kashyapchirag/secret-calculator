@@ -67,7 +67,7 @@ const OddsResult = ({
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-3 mt-2">
             <span className="flex items-center gap-3.5 bg-[#050911] border border-[#212632] rounded-full px-3 py-1.5 text-xs text-[#8b8ba7]">
-              🍀 Total Luck: {totalLuck}
+              🍀 Total Luck: {Number(totalLuck.toFixed(3))}
               <Tooltip>
                 <TooltipTrigger asChild>
                   <button

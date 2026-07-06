@@ -211,7 +211,7 @@ const InputSection = ({
                   {secret.name}
                 </h3>
                 <p
-                  className={`relative z-10 mt-1 text-[0.62rem] transition-colors ${
+                  className={`relative z-10 mt-1 text-[0.62rem] transition-colors tracking-tighter ${
                     selectedSecret === secretKey
                       ? "text-[#B7A7E8]"
                       : "text-[#8b8ba7]"

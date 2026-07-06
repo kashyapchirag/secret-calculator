@@ -43,7 +43,7 @@ export const secrets = {
   },
   yoruichi: {
     name: "Yoruichi",
-    star: "Summer Festival",
+    star: "Summer Event",
     starLuck: 0,
     baseChance: 0.00006060606,
     baseOdds: 1650000,
