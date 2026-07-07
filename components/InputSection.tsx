@@ -123,7 +123,7 @@ const InputSection = ({
                       With Secret Hunter GP
                     </span>
                     <span className="text-[#fabf22] [text-shadow:0_0_20px_currentColor] font-extrabold">
-                      50%
+                      +50%
                     </span>
                   </div>
                 </TooltipContent>

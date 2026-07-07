@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Home() {
   const [selectedSecret, setSelectedSecret] = useState<SecretKey>("broly");
   const [playerLuck, setPlayerLuck] = useState<string>("3.1");
-  const [secretChance, setSecretChance] = useState<string>("0");
+  const [secretChance, setSecretChance] = useState<string>("50");
 
   const calculateOdds = (
     selectedSecret: SecretKey,
