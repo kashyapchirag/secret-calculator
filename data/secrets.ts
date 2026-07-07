@@ -48,6 +48,13 @@ export const secrets = {
     baseChance: 0.00006060606,
     baseOdds: 1650000,
   },
+  kars: {
+    name: "Kars",
+    star: "Crusader",
+    starLuck: -0.35,
+    baseChance: 0.00003571428,
+    baseOdds: 2800000,
+  },
 } as const;
 
 export type SecretKey = keyof typeof secrets;
