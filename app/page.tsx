@@ -63,7 +63,7 @@ export default function Home() {
           Built with <span className="text-red-400">❤️</span> by{" "}
           <span className="text-[#12ddf4] font-semibold">Isaaagi109</span> (
           <a
-            href="https://github.com/kashyapchirag"
+            href="https://kashyapchirag.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#ffb634] hover:text-[#ffd36a] transition-colors"
