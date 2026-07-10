@@ -5,7 +5,27 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 
 import { cn } from "@/lib/utils";
 
-type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root>;
+type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root> & {
+  /**
+   * Either pass a preset ("cyan" | "yellow") or any raw CSS color
+   * (hex, rgb, var(--your-token)) for full control.
+   */
+  color?: "cyan" | "yellow" | (string & {});
+};
+
+const COLOR_PRESETS: Record<
+  "cyan" | "yellow",
+  { track: string; glow: string }
+> = {
+  cyan: {
+    track: "#20dfff",
+    glow: "0 0 8px rgba(32,223,255,0.7)",
+  },
+  yellow: {
+    track: "#fabf22",
+    glow: "0 0 8px rgba(250,191,34,0.7)",
+  },
+};
 
 function Slider({
   className,
@@ -13,6 +33,7 @@ function Slider({
   value,
   min = 0,
   max = 100,
+  color = "cyan",
   ...props
 }: SliderProps) {
   const values = React.useMemo(
@@ -24,6 +45,12 @@ function Slider({
           : [min],
     [value, defaultValue, min],
   );
+
+  // if it's one of our presets, use the tuned track color + glow.
+  // otherwise treat whatever string was passed as a raw CSS color.
+  const preset = COLOR_PRESETS[color as "cyan" | "yellow"];
+  const trackColor = preset ? preset.track : color;
+  const glow = preset ? preset.glow : `0 0 8px ${trackColor}`;
 
   return (
     <SliderPrimitive.Root
@@ -52,13 +79,11 @@ function Slider({
       >
         {/* Filled Range */}
         <SliderPrimitive.Range
-          className="
-            absolute
-            h-full
-            rounded-full
-            bg-[#20dfff]
-            shadow-[0_0_8px_rgba(32,223,255,0.7)]
-          "
+          className="absolute h-full rounded-full"
+          style={{
+            backgroundColor: trackColor,
+            boxShadow: glow,
+          }}
         />
       </SliderPrimitive.Track>
 
@@ -71,27 +96,37 @@ function Slider({
             h-4
             w-4
             rounded-full
-
             border-2
-            border-[#20dfff]
-
             bg-[#0c121d]
-
-            shadow-[0_0_10px_rgba(32,223,255,0.9)]
-
             transition-transform
             duration-150
-
             hover:scale-110
-
             focus-visible:outline-none
             focus-visible:ring-4
-            focus-visible:ring-cyan-400/20
           "
+          style={{
+            borderColor: trackColor,
+            boxShadow: `0 0 10px ${
+              preset
+                ? trackColor.replace("#", "").length === 6
+                  ? `rgba(${hexToRgb(trackColor)},0.9)`
+                  : trackColor
+                : trackColor
+            }`,
+          }}
         />
       ))}
     </SliderPrimitive.Root>
   );
+}
+
+function hexToRgb(hex: string) {
+  const clean = hex.replace("#", "");
+  const bigint = parseInt(clean, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `${r},${g},${b}`;
 }
 
 export { Slider };

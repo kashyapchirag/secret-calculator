@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [selectedSecret, setSelectedSecret] = useState<SecretKey>("broly");
-  const [playerLuck, setPlayerLuck] = useState<string>("3.1");
+  const [playerLuck, setPlayerLuck] = useState<string>("18.6");
   const [secretChance, setSecretChance] = useState<string>("50");
 
   const calculateOdds = (
@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 py-7 px-4 sm:px-6 items-center">
-      <div className="w-full max-w-[62rem] flex flex-col gap-5">
+      <div className="w-full max-w-4xl flex flex-col gap-5">
         <InputSection
           selectedSecret={selectedSecret}
           setSelectedSecret={setSelectedSecret}
@@ -58,7 +58,9 @@ export default function Home() {
           playerLuck={playerLuck}
           result={result}
         />
+
         <CurveSection result={result} targetName={selectedSecret} />
+
         <span className="text-center font-mono text-xs text-[#8b8ba7]">
           Built with <span className="text-red-400">❤️</span> by{" "}
           <span className="text-[#12ddf4] font-semibold">Isaaagi109</span> (

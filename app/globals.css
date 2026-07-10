@@ -64,16 +64,41 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+  --radius-3xl: 1.375rem;
+  --radius-4xl: 1.625rem;
+
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-surface: var(--bg-surface);
+
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-primary-hover: var(--accent-primary-hover);
+
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-light: var(--accent-secondary-light);
+  --color-accent-secondary-hover: var(--accent-secondary-hover);
+
+  --color-accent-selected: var(--accent-selected);
+  --color-accent-selected-light: var(--accent-selected-light);
+  --color-accent-selected-muted: var(--accent-selected-muted);
+
+  --color-danger: var(--danger);
 }
 
 :root {
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -106,6 +131,41 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* =========================
+   App Theme
+========================= */
+
+  /* Backgrounds */
+  --bg-page: #0a0e19;
+  --bg-card: #131924;
+  --bg-panel: #0c1119;
+  --bg-surface: #050911;
+
+  /* Borders */
+  --border-primary: #222b39;
+  --border-secondary: #212632;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #8b8ba7;
+
+  /* Brand */
+  --accent-primary: #12ddf4;
+  --accent-primary-hover: #04bcd0;
+
+  /* Secondary Accent */
+  --accent-secondary: #fabf22;
+  --accent-secondary-light: #ffb634;
+  --accent-secondary-hover: #ffd36a;
+
+  /* Selected / Active */
+  --accent-selected: #7c3aed;
+  --accent-selected-light: #c4b5fd;
+  --accent-selected-muted: #b7a7e8;
+
+  /* Status */
+  --danger: #f87171;
 }
 
 .dark {

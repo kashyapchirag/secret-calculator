@@ -82,36 +82,13 @@ const InputSection = ({
                     type="button"
                     className="flex h-4 w-4 items-center justify-center rounded-full bg-white/10 text-[9px] font-semibold text-white transition hover:bg-white/20"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={28}
-                      height={28}
-                      color={"currentColor"}
-                      fill={"none"}
-                      className="text-[#ffb634] hover:text-[#fba91b] transition:all"
-                    >
-                      <path
-                        d="M9.5 9.5C9.5 8.11929 10.6193 7 12 7C13.3807 7 14.5 8.11929 14.5 9.5C14.5 10.3569 14.0689 11.1131 13.4117 11.5636C12.7283 12.0319 12 12.6716 12 13.5"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
+                    ?
                   </button>
                 </TooltipTrigger>
 
                 <TooltipContent className="bg-[#050911] border border-[#222b39] font-mono flex flex-col justify-center items-start p-2">
                   <div className="w-full flex justify-between items-center gap-3">
-                    <span className="text-[#8b8ba7] font-bold">
+                    <span className="text-[#8b8ba7] font-semibold">
                       No Secret Hunter GP
                     </span>
                     <span className="text-[#fabf22] [text-shadow:0_0_20px_currentColor] font-extrabold">
@@ -119,7 +96,7 @@ const InputSection = ({
                     </span>
                   </div>
                   <div className="w-full flex justify-between gap-3">
-                    <span className="text-[#8b8ba7] font-bold">
+                    <span className="text-[#8b8ba7] font-semibold">
                       With Secret Hunter GP
                     </span>
                     <span className="text-[#fabf22] [text-shadow:0_0_20px_currentColor] font-extrabold">
@@ -217,7 +194,7 @@ const InputSection = ({
                       : "text-[#8b8ba7]"
                   }`}
                 >
-                  Base: 1 in {secret.baseOdds.toLocaleString()} • {secret.star}
+                  Base: 1 in {secret.baseOdds.toLocaleString()}
                 </p>
               </button>
             );
