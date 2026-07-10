@@ -174,7 +174,7 @@ const CurveSection = ({
               </div>
             </div>
 
-            <div className="cards grid grid-cols-3 sm:grid-cols-3 gap-3">
+            <div className="cards grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="relative overflow-hidden rounded-xl border border-border-primary bg-bg-surface pl-4 pr-4 py-4">
                 <div className="absolute left-0 h-full top-0 w-0.75 rounded-full bg-accent-secondary" />
                 <div className="w-full flex flex-col items-start">
