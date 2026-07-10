@@ -22,7 +22,7 @@ const OddsResult = ({
   const shinyChancePercent = (100 / (result * 50)).toFixed(7);
 
   return (
-    <div className="bg-[#131924] border border-[#222b39] font-mono w-full min-h-fit rounded-[1.2rem] flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-10 p-5.5">
+    <div className="bg-[#131924] border border-[#222b39] font-mono w-full min-h-fit rounded-[1.2rem] flex flex-col gap-5 sm:flex-row items-center justify-between  p-5.5">
       {/* left: gauge + odds */}
       <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
         {/* gauge */}
@@ -61,7 +61,7 @@ const OddsResult = ({
           <span className="text-[#8b8ba7] text-[11px] font-semibold uppercase tracking-[0.25em]">
             Your Odds
           </span>
-          <h2 className="text-[#12ddf4] text-4xl sm:text-6xl md:text-[3.5rem] font-bold tracking-tight [text-shadow:0_0_24px_rgba(18,221,244,0.35)]">
+          <h2 className="text-[#12ddf4] text-4xl sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-bold tracking-tight [text-shadow:0_0_24px_rgba(18,221,244,0.35)]">
             1 IN {roundedNormalOdds.toLocaleString("en-US")}
           </h2>
           <p className="text-[#8b8ba7] text-sm">
@@ -133,31 +133,6 @@ const OddsResult = ({
         </div>
       </div>
 
-      {/* right: shiny odds card */}
-      {/* <div className="w-full sm:w-40 lg:w-64 shrink-0 bg-[#050911] border border-[#212632] rounded-[1rem] p-4 flex flex-col gap-2">
-        <span className="flex items-center gap-1.5 text-[#fabf22] text-sm font-semibold">
-          ✨ Shiny Odds
-        </span>
-        <h3 className="text-white text-xl font-bold">
-          1 IN {shinyOdds.toLocaleString("en-US")}
-        </h3>
-        <span className="text-[#8b8ba7] text-xs">
-          <span className="text-[#fabf22]">{shinyChancePercent}%</span> chance
-          per hatch
-        </span>
-      </div> */}
-      {/* <div className="relative overflow-hidden rounded-xl border border-border-primary bg-bg-surface pl-4 pr-4 py-4 w-60">
-        <div className="absolute left-0 h-full top-0 w-0.75 rounded-full bg-accent-secondary" />
-        <div className="w-full flex flex-col items-start">
-          <span className="text-text-secondary text-xs">
-            Secret pull chance
-          </span>
-          <div className="mt-1 font-mono text-2xl font-bold text-accent-secondary">
-            {normalChancePercent}
-            <span>%</span>
-          </div>
-        </div>
-      </div> */}
       <div className="w-50 shrink-0 rounded-2xl border border-[#212632] bg-[#050911] p-4 flex flex-col justify-between gap-2">
         <div>
           <p className="text-accent-primary text-[11px] uppercase tracking-[0.2em]">
