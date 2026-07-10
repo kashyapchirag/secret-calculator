@@ -188,7 +188,7 @@ const InputSection = ({
           TARGET UNIT
         </h2>
 
-        <div className="box grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-2">
+        <div className="box grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-2 gap-x-2">
           {Object.entries(secrets).map(([key, secret]) => {
             const secretKey = key as SecretKey;
             return (
