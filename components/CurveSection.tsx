@@ -15,7 +15,7 @@ const CurveSection = ({
 }) => {
   const chanceFraction = 1 / result;
 
-  const [shinyActive, setShinyActive] = useState<boolean>(true);
+  const [shinyActive, setShinyActive] = useState<boolean>(false);
   const [shinyChance, setShinyChance] = useState<string>("5");
 
   const shinyPct = Number(shinyChance) || 0;
