@@ -1,6 +1,5 @@
 import { SecretKey, secrets } from "@/data/secrets";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import Image from "next/image";
 import ShinyText from "./lightswind/shiny-text";
 
 type OddsResultProps = {
