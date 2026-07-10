@@ -1,6 +1,7 @@
 import { SecretKey, secrets } from "@/data/secrets";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import Image from "next/image";
+import ShinyText from "./lightswind/shiny-text";
 
 type OddsResultProps = {
   selectedSecret: SecretKey;
@@ -164,9 +165,17 @@ const OddsResult = ({
             Selected Secret
           </p>
 
-          <h3 className=" text-[20px] font-bold shimmer-text text-text-primary">
+          <ShinyText
+            shineColor="#111214"
+            baseColor="#f4f4f4"
+            speed={2}
+            size="xl"
+            weight="extrabold"
+            shineWidth={5}
+          >
+            {" "}
             {secrets[selectedSecret].name}
-          </h3>
+          </ShinyText>
 
           <p className="text-sm text-[#ffb634]">
             {secrets[selectedSecret].star} Star

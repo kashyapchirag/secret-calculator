@@ -1,5 +1,6 @@
 "use client";
 import CurveSection from "@/components/CurveSection";
+import Hero from "@/components/Hero";
 import InputSection from "@/components/InputSection";
 import OddsResult from "@/components/OddsResult";
 import { SecretKey, secrets } from "@/data/secrets";
@@ -45,6 +46,7 @@ export default function Home() {
   return (
     <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 py-7 px-4 sm:px-6 items-center">
       <div className="w-full max-w-4xl flex flex-col gap-5">
+        {/* <Hero /> */}
         <InputSection
           selectedSecret={selectedSecret}
           setSelectedSecret={setSelectedSecret}

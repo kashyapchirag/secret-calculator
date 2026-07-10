@@ -5,6 +5,7 @@ import { Switch } from "./ui/switch";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { SecretKey, secrets } from "@/data/secrets";
 import ProbabilityCurve from "./ProbabilityCurve";
+import ShinyText from "./lightswind/shiny-text";
 
 const CurveSection = ({
   result,
@@ -154,9 +155,21 @@ const CurveSection = ({
                 </div>
               </div>
               <div className="left flex gap-2 items-center">
-                <div className="text-accent-secondary shimmer font-extrabold text-[15px]">
+                {/* <div className="text-accent-secondary shimmer font-extrabold text-[15px]">
                   {secrets[targetName].name.toLocaleUpperCase()}
-                </div>
+                </div> */}
+                <ShinyText
+                  shineColor="#fabf22"
+                  baseColor="#ffb634"
+                  speed={4}
+                  size="xs"
+                  weight="extrabold"
+                  shineWidth={35}
+                  className="text-[15px]"
+                >
+                  {" "}
+                  {secrets[targetName].name.toLocaleUpperCase()}
+                </ShinyText>
                 <span className="w-1 h-4 rounded-full bg-accent-secondary" />
               </div>
             </div>

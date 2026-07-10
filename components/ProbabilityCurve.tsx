@@ -8,6 +8,7 @@ import {
   formatCompact,
 } from "@/lib/probability";
 import { cn } from "@/lib/utils";
+import ShinyText from "./lightswind/shiny-text";
 
 type Accent = "primary" | "secondary";
 
@@ -143,9 +144,22 @@ const ProbabilityCurve = ({
             </div>
           </div>
           <div className="left flex gap-2 items-center">
-            <div className="text-accent-primary-hover shimmer font-extrabold text-[15px]">
+            {/* <div className="text-accent-primary-hover shimmer font-extrabold text-[15px]">
               {targetLabel?.toLocaleUpperCase()}
-            </div>
+            </div> */}
+            <ShinyText
+              shineColor="#12ddf4"
+              baseColor="#04bcd0"
+              speed={4}
+              size="xs"
+              weight="extrabold"
+              shineWidth={35}
+              className="text-[15px]"
+            >
+              {" "}
+              {targetLabel?.toLocaleUpperCase()}
+            </ShinyText>
+
             <span className="w-1 h-4 rounded-full bg-accent-primary-hover" />
           </div>
         </div>

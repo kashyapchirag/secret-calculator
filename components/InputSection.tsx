@@ -2,6 +2,7 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { SecretKey, secrets } from "@/data/secrets";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { ShinyText } from "@/components/lightswind/shiny-text";
 
 type propType = {
   selectedSecret: SecretKey;
@@ -71,7 +72,17 @@ const InputSection = ({
         {/* Secret Chance % */}
         <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
           <div className="box text-xl h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
-            <span className="shimmer-text font-bold">???</span>
+            {/* <span className="shimmer-text font-bold">???</span> */}
+            <ShinyText
+              shineColor="#111214"
+              baseColor="#f4f4f4"
+              speed={1.5}
+              size="xl"
+              weight="extrabold"
+            >
+              {" "}
+              ???
+            </ShinyText>
           </div>
           <div className="flex-1 h-full min-w-0">
             <h3 className="flex items-center gap-1 text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em]">
@@ -150,7 +161,19 @@ const InputSection = ({
           <div className="flex-1 h-full flex flex-col justify-center min-w-0">
             <h3 className="text-[#12ddf4] font-semibold font-mono text-[10px] uppercase tracking-[0.2em] truncate">
               STAR (AUTO:
-              <span className="shimmer-text font-bold"> {selectedSecret})</span>
+              {/* <span className="shimmer-text font-bold"> {selectedSecret}</span>) */}
+              <ShinyText
+                shineColor="#111214"
+                baseColor="#f4f4f4"
+                speed={1.5}
+                size="xs"
+                weight="extrabold"
+                className="text-[10px]"
+              >
+                {" "}
+                {selectedSecret}
+              </ShinyText>
+              )
             </h3>
             <p className="mt-1 text-[1rem] leading-none font-semibold font-mono text-[#ffb634] [text-shadow:0_0_10px_rgba(255,182,52,0.2)] truncate">
               {secrets[selectedSecret].star} ({secrets[selectedSecret].starLuck}
