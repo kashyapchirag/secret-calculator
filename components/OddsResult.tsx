@@ -22,7 +22,7 @@ const OddsResult = ({
   const shinyChancePercent = (100 / (result * 50)).toFixed(7);
 
   return (
-    <div className="bg-[#131924] border border-[#222b39] font-mono w-full min-h-fit rounded-[1.2rem] flex flex-col gap-5 sm:flex-row items-center justify-between  p-5.5">
+    <div className="bg-[#131924] sm:border sm:border-[#222b39] font-mono w-full min-h-fit sm:rounded-[1.2rem] flex flex-col gap-5 sm:flex-row items-center justify-between  p-4 md:p-5.5 ">
       {/* left: gauge + odds */}
       <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
         {/* gauge */}

@@ -22,10 +22,11 @@ const InputSection = ({
   setSecretChance,
 }: propType) => {
   return (
-    <div className="bg-[#131924] border border-[#222b39] font-mono p-5.5 w-full min-h-fit rounded-[1.2rem] flex flex-col gap-5">
-      <div className="top-row flex flex-col sm:flex-row gap-5 w-full">
+    <div className="bg-[#131924] sm:border sm:border-[#222b39] font-mono p-4 md:p-5.5 w-full min-h-fit sm:rounded-[1.2rem] flex flex-col gap-5">
+      {/* <div className="top-row flex flex-col sm:flex-row gap-5 w-full"> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4">
         {/* Player Luck */}
-        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+        <div className="bg-[#050911] h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
           <div className="box h-full text-2xl w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             🍀
           </div>
@@ -70,7 +71,7 @@ const InputSection = ({
         </div>
 
         {/* Secret Chance % */}
-        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+        <div className="bg-[#050911] h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
           <div className="box text-xl h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             {/* <span className="shimmer-text font-bold">???</span> */}
             <ShinyText
@@ -154,7 +155,7 @@ const InputSection = ({
         </div>
 
         {/* Star (auto) */}
-        <div className="bg-[#050911] w-full sm:w-1/3 h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
+        <div className="bg-[#050911] h-17 rounded-[0.9rem] border border-[#212632] p-3 flex gap-3">
           <div className="box text-5xl pb-2 text-white h-full w-11 shrink-0 border border-[#222b39] bg-[#131924] rounded-[0.6rem] flex justify-center items-center">
             ✦
           </div>

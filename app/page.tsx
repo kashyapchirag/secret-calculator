@@ -43,7 +43,7 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 py-7 px-4 sm:px-6 items-center">
+    <div className="bg-[#0a0e19] min-h-screen w-full flex flex-col gap-5 sm:py-7 sm:px-6 items-center">
       <div className="w-full max-w-4xl flex flex-col gap-5">
         <InputSection
           selectedSecret={selectedSecret}
@@ -61,7 +61,7 @@ export default function Home() {
 
         <CurveSection result={result} targetName={selectedSecret} />
 
-        <span className="text-center font-mono text-xs text-[#8b8ba7]">
+        <span className="text-center font-mono mb-5 sm:mb-0 text-xs text-[#8b8ba7]">
           Built with <span className="text-red-400">❤️</span> by{" "}
           <span className="text-[#12ddf4] font-semibold">Isaaagi109</span> (
           <a

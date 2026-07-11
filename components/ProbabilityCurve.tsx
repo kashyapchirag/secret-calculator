@@ -118,8 +118,9 @@ const ProbabilityCurve = ({
   return (
     <div
       className={cn(
-        "bg-bg-card font-mono w-full min-h-80 rounded-[1.2rem] flex flex-col gap-0",
-        title === "Shiny Pull" || "border border-border-primary p-5.5",
+        "bg-bg-card font-mono w-full min-h-80 sm:rounded-[1.2rem] flex flex-col gap-0",
+        title === "Shiny Pull" ||
+          "sm:border sm:border-border-primary p-4 md:p-5.5 ",
       )}
     >
       {title === "Shiny Pull" || (

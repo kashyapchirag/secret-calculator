@@ -40,7 +40,7 @@ const CurveSection = ({
       />
 
       {/* divider + shiny toggle */}
-      <div className="bg-bg-card border border-border-primary rounded-[1.2rem] p-5.5">
+      <div className="bg-bg-card sm:border sm:border-border-primary sm:rounded-[1.2rem] p-4 md:p-5.5 ">
         <div className="flex items-center gap-5 flex-wrap">
           <Switch
             checked={shinyActive}
